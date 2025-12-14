@@ -1,0 +1,281 @@
+{
+	"info": {
+		"_postman_id": "edecf70f-af82-41bf-8e58-68ce69dd0f05",
+		"name": "fitPlanHub",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37751939"
+	},
+	"item": [
+		{
+			"name": "user login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\" : \"anant@gmail.com\",\r\n    \"password\" : \"12345678\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"Ujjawal Patidar\",\r\n    \"email\" : \"ujjawal@gmail.com\",\r\n    \"password\" : \"12345678\",\r\n    \"role\" : \"user\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createplan",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Fat Loss Beginner 30-Day Program\",\r\n  \"description\": \"A beginner-friendly fat loss plan designed to burn calories, improve metabolism, and build consistency.\",\r\n  \"price\": 999,\r\n  \"duration\": \"30 Days\",\r\n  \"planContent\": {\r\n    \"overview\": \"High-protein, calorie-controlled meals to support fat loss and muscle recovery.\",\r\n    \r\n    \"mealPlan\": {\r\n      \"guidelines\": \"High-protein, calorie-controlled meals to support fat loss and muscle recovery.\",\r\n      \"weeklyMeals\": [\r\n        {\r\n          \"day\": \"1\",\r\n          \"meals\": {\r\n            \"breakfast\": \"Oats with skim milk, almonds, and banana\",\r\n            \"lunch\": \"Grilled chicken breast, brown rice, steamed vegetables\",\r\n            \"snacks\": \"Boiled eggs + green tea\",\r\n            \"dinner\": \"Paneer stir fry with mixed vegetables\"\r\n          }\r\n        },\r\n        {\r\n          \"day\": \"2\",\r\n          \"meals\": {\r\n            \"breakfast\": \"Vegetable omelette + whole wheat toast\",\r\n            \"lunch\": \"Fish curry with rice\",\r\n            \"snacks\": \"Apple + handful of peanuts\",\r\n            \"dinner\": \"Dal, roti, salad\"\r\n          }\r\n        }\r\n      ]\r\n    },\r\n\r\n    \"exercisePlan\": [\r\n      {\r\n        \"week\": 1,\r\n        \"goal\": \"Build full body strength and fat loss\",\r\n        \"days\": [\r\n          {\r\n            \"day\": \"1\",\r\n            \"workoutType\": \"Full Body\",\r\n            \"exercises\": [\r\n              { \"name\": \"Jumping Jacks\", \"sets\": \"3\", \"reps\": \"30\", \"rest\": \"60 sec\" },\r\n              { \"name\": \"Push-ups\", \"sets\": \"3\", \"reps\": \"10\", \"rest\": \"60 sec\" },\r\n              { \"name\": \"Squats\", \"sets\": \"3\", \"reps\": \"15\", \"rest\": \"60 sec\" }\r\n            ],\r\n            \"notes\": \"Do warm-up before starting.\"\r\n          },\r\n          {\r\n            \"day\": \"2\",\r\n            \"workoutType\": \"Cardio + Core\",\r\n            \"exercises\": [\r\n              { \"name\": \"Brisk Walking\", \"sets\": \"1\", \"reps\": \"1\", \"rest\": \"0\", \"duration\": \"20 min\" },\r\n              { \"name\": \"Plank\", \"sets\": \"3\", \"reps\": \"1\", \"rest\": \"60 sec\", \"duration\": \"30 sec\" }\r\n            ],\r\n            \"notes\": \"Maintain proper form.\"\r\n          }\r\n        ]\r\n      }\r\n    ],\r\n\r\n    \"extras\": {\r\n      \"supplements\": \"Whey protein optional\",\r\n      \"recoveryTips\": \"Stretch daily and sleep 7-8 hours\",\r\n      \"lifestyleTips\": \"Avoid sugary drinks and stay active\"\r\n    }\r\n  }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/plans",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"plans"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllplans",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/plans/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"plans",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPlanById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/plans/693ea141e67e457ed89d6654",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"plans",
+						"693ea141e67e457ed89d6654"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deletePlan",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/plans/693e9e69e67e457ed89d65f5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"plans",
+						"693e9e69e67e457ed89d65f5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "subscribePlanId",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/users/subscribe/693e9ef9e67e457ed89d6601",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"subscribe",
+						"693e9ef9e67e457ed89d6601"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "followTrainerId",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/users/follow/693e9b0c1c23772ea7fc9777",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"follow",
+						"693e9b0c1c23772ea7fc9777"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "unfollowTrainerId",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/users/unfollow/693e9b0c1c23772ea7fc9777",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users",
+						"unfollow",
+						"693e9b0c1c23772ea7fc9777"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "userFeed",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5M2VhMWUxZTY3ZTQ1N2VkODlkNjY3OCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzY1NzEyMzUzLCJleHAiOjE3NjYzMTcxNTN9.KK78U4oj1Wi7YSZsDfKtXMHKgpVdlUpSidEtBFiN5W4",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
