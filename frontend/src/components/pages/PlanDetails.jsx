@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Navbar from "../Navbar.jsx";
 import api from "../../api/api.js";
 
@@ -89,9 +89,12 @@ const PlanDetails = () => {
                 Login to purchase this plan
               </p>
             ) : (
+              <Link to={"/feed"}>
               <button className="mt-6 bg-indigo-600 text-white px-6 py-3 rounded-md hover:bg-indigo-700">
                 Buy Plan
               </button>
+              </Link>
+              
             )}
           </div>
         ) : (
